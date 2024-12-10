@@ -1,4 +1,3 @@
-import { SplashScene } from './scenes/Splash'; // Ensure the file path is correct
 import { Boot } from './scenes/Boot';
 import { Game as MainGame } from './scenes/Game';
 import { GameOver } from './scenes/GameOver';
@@ -11,8 +10,8 @@ import { Game, Types } from "phaser";
 //  https://newdocs.phaser.io/docs/3.70.0/Phaser.Types.Core.GameConfig
 const config: Types.Core.GameConfig = {
     type: Phaser.AUTO,
-    width: 1024,
-    height: 768,
+    width: 1920,
+    height: 1080,
     parent: 'game-container',
     backgroundColor: '#028af8',
     scale: {
@@ -22,7 +21,6 @@ const config: Types.Core.GameConfig = {
     scene: [
         Boot,
         Preloader,
-        SplashScene, // Added SplashScene
         MainMenu,
         MainGame,
         GameOver

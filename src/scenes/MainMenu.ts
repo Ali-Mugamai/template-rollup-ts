@@ -13,14 +13,13 @@ export class MainMenu extends Scene
 
     create ()
     {
-        this.background = this.add.image(512, 384, 'background');
+        this.background = this.add.image(1920 / 2, 1080 / 2, "logo2");
 
-        this.logo = this.add.image(512, 300, 'logo');
 
-        this.title = this.add.text(512, 460, 'Main Menu', {
+        this.title = this.add.text(1920 / 2, 1080 / 2, 'Start Game', {
             fontFamily: 'Arial Black', fontSize: 38, color: '#ffffff',
             stroke: '#000000', strokeThickness: 8,
-            align: 'center'
+            align: 'auto'
         }).setOrigin(0.5);
 
         this.input.once('pointerdown', () => {
