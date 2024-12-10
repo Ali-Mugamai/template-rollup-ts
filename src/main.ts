@@ -1,3 +1,4 @@
+import { SplashScene } from './scenes/Splash'; // Ensure the file path is correct
 import { Boot } from './scenes/Boot';
 import { Game as MainGame } from './scenes/Game';
 import { GameOver } from './scenes/GameOver';
@@ -21,6 +22,7 @@ const config: Types.Core.GameConfig = {
     scene: [
         Boot,
         Preloader,
+        SplashScene, // Added SplashScene
         MainMenu,
         MainGame,
         GameOver
