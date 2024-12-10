@@ -1,3 +1,12 @@
+/**
+ * Main.
+ *
+ * By: Flynn Rundeuiqst & Infinity DeGuzman
+ * Version: 1.0
+ * Since: 15-05-2024
+ */
+
+
 import { Boot } from './scenes/Boot';
 import { Game as MainGame } from './scenes/Game';
 import { GameOver } from './scenes/GameOver';
@@ -13,7 +22,14 @@ const config: Types.Core.GameConfig = {
     width: 1920,
     height: 1080,
     parent: 'game-container',
-    backgroundColor: '#028af8',
+    backgroundColor: '#87ceeb',
+    physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: { x: 0, y: 100 },
+            debug: false
+        }
+    },
     scale: {
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH

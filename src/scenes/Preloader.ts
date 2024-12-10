@@ -35,12 +35,16 @@ export class Preloader extends Scene
         this.load.image('logo', 'logo.png');
         this.load.image('background', 'logo.png');
         this.load.image('gun1', 'sprit_gun.png');
-        this.load.image('gun2', 'sprit_gun_right.png');
+        this.load.image('gun2', 'assets/sprit_gun_right.png');
         this.load.image('platform', 'image(1).png');
         this.load.image('player1', 'character_idle.png');
         this.load.image('player2', 'character_idle_right_side.png');
         this.load.image('scenery', 'scenery.png');
         this.load.image('logo2', 'final_banner.jpg');
+        // In Preloader Scene
+        this.load.image('bullet', 'bullet.png');
+
+
         
 
 
@@ -55,3 +59,4 @@ export class Preloader extends Scene
         this.scene.start('MainMenu');
     }
 }
+export default Preloader;

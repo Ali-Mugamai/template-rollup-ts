@@ -1,18 +1,16 @@
 import Phaser from 'phaser';
 import Player from '../sprites/Player';
-import Player2 from '../sprites/player2';
+import Player2 from '../sprites/Player2';
 
 export class Game extends Phaser.Scene {
     private camera: Phaser.Cameras.Scene2D.Camera;
     private background: Phaser.GameObjects.TileSprite;
     private healthText: Phaser.GameObjects.Text;
     private scoreText: Phaser.GameObjects.Text;
-    private helpText: Phaser.GameObjects.Text;
 
     private player1: Player | null = null;
-    private player2: Player2 | null = null; // Create player2 reference
+    private player2: Player2 | null = null;
     private platforms: Phaser.Physics.Arcade.Group;
-    private cursors: Phaser.Types.Input.Keyboard.CursorKeys | null = null;
     private finalScore: number = 0;
 
     constructor() {
@@ -47,7 +45,7 @@ export class Game extends Phaser.Scene {
             x: 600,
             y: 450,
             texture: 'player2',
-            shootKey: 'ENTER' // Enter key for Player 2 to shoot
+            shootKey: 'E' // Enter key for Player 2 to shoot
         }, 100, 0);
 
         this.add.existing(this.player2);
@@ -61,7 +59,6 @@ export class Game extends Phaser.Scene {
         player2Body.setAllowGravity(true);
         player2Body.setImmovable(false);
 
-
         // Initialize platforms group
         this.platforms = this.physics.add.group({
             immovable: true,
@@ -69,7 +66,7 @@ export class Game extends Phaser.Scene {
         });
 
         // Generate platforms every 500 pixels, with a y between 300 and 450
-        for (let counter = 0; counter < 2048; counter += 100) {
+        for (let counter = 0; counter < 2048; counter += 600) {
             const y = Phaser.Math.Between(200, 300);
             this.createPlatform(counter, y, 'platform', 1);
         }
